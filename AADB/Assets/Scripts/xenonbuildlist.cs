@@ -5,11 +5,9 @@ using UnityEngine.Networking;
 
 public class xenonbuildlist : MonoBehaviour
 {
-    private string textFromWWW;
-    public Text siteText;
+    public Text buildListTxtElement;
     private string url = "https://wiki.alphaarchive.net/Builds.txt";
-    //public Text siteTextb;
-    //private string urlb = "https://wiki.alphaarchive.net/Builds2.txt";
+
 
     void Start()
     {
@@ -18,17 +16,16 @@ public class xenonbuildlist : MonoBehaviour
     IEnumerator GetTextFromWWW()
     {
         WWW www = new WWW(url);
-        //WWW wwwb = new WWW(urlb);
+
         yield return www;
-        //yield return wwwb;
+
         if (www.error != null)
         {
             Debug.Log("Ooops, something went wrong...");
         }
         else
         {
-            //siteTextb.text = wwwb.text;
-            siteText.text = www.text;
+            buildListTxtElement.text = www.text;
         }
     }
     void Update()
