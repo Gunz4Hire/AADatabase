@@ -66,16 +66,17 @@ public class xenonbuildlist : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (!downloading)
             return;
         if (downloading = true)
         {
             timer.text = "" + uptimer + 1 * Time.time;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+
     }
 
 }
