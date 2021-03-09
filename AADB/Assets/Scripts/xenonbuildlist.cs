@@ -12,12 +12,10 @@ public class xenonbuildlist : MonoBehaviour
     float uptimer = 0f;
     //private string url = "https://wiki.alphaarchive.net/Builds.txt";
     bool downloading = true;
-    public float oof;
     void Start()
     {
         //StartCoroutine(GetTextFromWWW());
         StartCoroutine(GetText("Turok"));
-
     }
     /*IEnumerator GetTextFromWWW()
     {
@@ -40,7 +38,6 @@ public class xenonbuildlist : MonoBehaviour
 
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
-            
             yield return www.Send();
 
             if (www.isError)
@@ -49,7 +46,6 @@ public class xenonbuildlist : MonoBehaviour
             }
             else
             {
-                
                 string savePath = string.Format("{0}/{1}.rar", Application.persistentDataPath, file_name);
 
                 if (www.downloadProgress == 1f)
@@ -57,11 +53,8 @@ public class xenonbuildlist : MonoBehaviour
                     progressImage.color = Color.green;
                     downloading = false;
                 }
-                oof = www.downloadProgress;
                 System.IO.File.WriteAllBytes(savePath, www.downloadHandler.data);
-
             }
-            
         }
     }
     void Update()
@@ -76,7 +69,5 @@ public class xenonbuildlist : MonoBehaviour
         {
             timer.text = "" + uptimer + 1 * Time.time;
         }
-
     }
-
 }
