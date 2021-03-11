@@ -66,13 +66,9 @@ public class xenonbuildlist : MonoBehaviour
         using (WWW www = new WWW(url))
         {
             yield return www;
+
             string savePath = string.Format("{0}/{1}.rar", Application.persistentDataPath, build_names);
             string savePathB = string.Format("{0}/{1}.rar", Application.streamingAssetsPath, build_names);
-            if (www.bytesDownloaded == 1f)
-            {
-                progressImage.color = Color.green;
-                downloading = false;
-            }
             System.IO.File.WriteAllBytes(savePath, www.bytes);
             System.IO.File.WriteAllBytes(savePathB, www.bytes);
         }
