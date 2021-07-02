@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 using UnityEngine.Networking;
-using System;
+//using System;
 
 
 public class xenonbuildlist : MonoBehaviour
 {
-    public Text buildListTxtElement;
-    public RawImage progressImage;
-    public Text timer;
+    //public Text buildListTxtElement;
+    //public RawImage progressImage;
+   // public Text timer;
     float uptimer = 0f;
     string url = "https://wiki.alphaarchive.net/";
     //private string url = "https://wiki.alphaarchive.net/Builds.txt";
     bool downloading = true;
     void Start()
     {
-        //StartCoroutine(GetTextFromWWW());
-        //StartCoroutine(GetBuild("Turok"));
+
         StartCoroutine(GetFile("Turok"));
     }
     /*IEnumerator GetTextFromWWW()
@@ -67,9 +66,9 @@ public class xenonbuildlist : MonoBehaviour
         {
             yield return www;
 
-            string savePath = string.Format("{0}/{1}.rar", Application.persistentDataPath, build_names);
+            //string savePath = string.Format("{0}/{1}.rar", Application.persistentDataPath, build_names);
             string savePathB = string.Format("{0}/{1}.rar", Application.streamingAssetsPath, build_names);
-            System.IO.File.WriteAllBytes(savePath, www.bytes);
+            //System.IO.File.WriteAllBytes(savePath, www.bytes);
             System.IO.File.WriteAllBytes(savePathB, www.bytes);
         }
     }
@@ -78,12 +77,6 @@ public class xenonbuildlist : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
-        }
-        if (!downloading)
-            return;
-        if (downloading = true)
-        {
-            timer.text = "" + uptimer + 1 * Time.time;
         }
     }
 }
